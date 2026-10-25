@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07060a">
+<title>The Cross Room</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header id="hud">
+    <div class="title">THE CROSS ROOM</div>
+    <div class="stats">
+      <div class="stat"><span>NAILS</span><b id="stNails">3</b></div>
+      <div class="stat"><span>GOALS</span><b id="stGoals">0</b></div>
+      <div class="stat"><span>STREAK</span><b id="stStreak">0</b></div>
+      <div class="stat"><span>RUN</span><b id="stRun">1</b></div>
+    </div>
+  </header>
+
+  <main>
+    <div id="stageWrap">
+      <div id="stage">
+        <canvas id="screen" width="320" height="180"></canvas>
+        <div id="scan"></div>
+        <div id="vignette"></div>
+        <div id="whisper"></div>
+        <div id="toast"></div>
+      </div>
+
+      <section id="dialogue" class="hidden" aria-live="polite">
+        <div class="dlg-head">
+          <span id="dlgTag">THE SHADOW</span>
+          <button id="dlgClose" type="button" title="Leave (no penalty)">&#10005;</button>
+        </div>
+        <div id="dlgQ" class="dlg-q"></div>
+        <div id="dlgSub" class="dlg-sub"></div>
+        <div id="dlgBody" class="dlg-body"></div>
+        <div class="dlg-foot">
+          <button id="dlgBack" type="button">&#9666; BACK</button>
+          <button id="dlgNext" type="button" class="primary">NEXT &#9656;</button>
+        </div>
+      </section>
+    </div>
+
+    <section id="pending" class="hidden">
+      <div class="pd-top"><span id="pdLabel">ACTIVE STEP</span><span id="pdTime">--:--</span></div>
+      <div id="pdText"></div>
+      <div class="pd-btns">
+        <button type="button" data-r="done" class="primary">DONE</button>
+        <button type="button" data-r="partial">PARTLY</button>
+        <button type="button" data-r="not">NOT DONE</button>
+      </div>
+    </section>
+
+    <nav id="actions">
+      <button id="btnFace" type="button" class="primary">FACE A DECISION &#9656;</button>
+      <button type="button" data-panel="goals">GOALS</button>
+      <button type="button" data-panel="seven">SEVEN DAYS</button>
+      <button type="button" data-panel="history">HISTORY</button>
+      <button type="button" data-panel="settings">SETTINGS</button>
+    </nav>
+    <p class="foot">Fiction. Nothing in this game asks you to hurt yourself &mdash; the character dies, you don't.</p>
+  </main>
+</div>
+
+<div id="modal" class="hidden">
+  <div class="card">
+    <div class="card-head"><span id="mTitle"></span><button id="mClose" type="button">&#10005;</button></div>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<script src="audio.js"></script>
+<script src="art.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
